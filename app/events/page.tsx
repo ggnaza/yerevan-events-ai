@@ -5,7 +5,7 @@ import { Suspense } from 'react'
 import type { Event } from '@/lib/types'
 import { addDays, format, startOfWeek, endOfWeek, startOfMonth, endOfMonth } from 'date-fns'
 
-export const revalidate = 30
+export const dynamic = 'force-dynamic'
 
 interface SearchParams {
   q?: string
