@@ -22,8 +22,11 @@ export async function GET(request: NextRequest) {
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
       {
         cookies: {
-          getAll() { return cookieStore.getAll() },
-          setAll(cookiesToSet) {
+          getAll() {
+            return cookieStore.getAll()
+          },
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          setAll(cookiesToSet: any[]) {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             )
